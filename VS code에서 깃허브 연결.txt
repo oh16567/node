@@ -1,0 +1,61 @@
+====== git bash 설정 ======
+
+git config --global user.name "oh16567"
+
+git config --global user.email "kss001100@gmail.com"
+
+git config --list
+
+====== VS code 새 터미널 설정 ======
+ 
+git init
+
+git add .
+
+git status
+
+git commit -m "first commit"
+
+git remote add origin https://github.com/oh16567/node.git
+
+======"Git Remote origin already exists" 오류 발생 시 조치===========
+1) git remote remove origin ​-> 기존 repository와 연결을 끊음
+
+2) git remote add origin [새 repository의 주소] -> 새로운 주소와 연결시킴
+====================================================
+
+git remote -v
+
+git push origin master
+
+======Github에 계속 업데이트 하는법 🤹‍♂️======
+
+추가할 파일 더하기
+git add .
+
+히스토리 만들기
+git commit -m "first commit"
+
+Github로 올리기
+git push origin master
+
+내 컴퓨터에 소스코드를 업데이트를 하고 싶으면 이 세개의 스텝만 계속 반복하면 됨.
+
+
+====="error: failed to push some refs to [내 주소]" 오류 발생 시 조치=======
+1. remote에 있는 변경사항을 pull로 내려받은 후,
+git pull --rebase [branch name]
+git pull --rebase origin master
+
+2. 내 파일과 merge하여,
+
+3. 다시 push로 깃에 업로드
+
+※git에서 한 브랜치의 내용을 다른 브랜치로 병합하는 방법으로
+1. merge
+2.rebase
+의 명령어가 존재한다.
+두 방법 중 좋고 나쁨은 따질 수 없지만 rebase 명령어를 사용할 때에는 한가지를 주의해야 한다.
+push 전에 정리의 목적으로 rebase를 사용하는 경우, 공개하지 않고 자체적으로 rebase를 사용하는 경우는 괜찮지만,
+이미 공개하여 사람들이 사용하는 commit을 rebase하면 문제가 발생한다고 한다.
+====================================================
